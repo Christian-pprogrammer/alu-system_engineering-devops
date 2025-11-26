@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # Fix Nginx port 80 - short version
-rm /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx start
-killall -9 nginx
-/usr/sbin/nginx
+pkill nginx
